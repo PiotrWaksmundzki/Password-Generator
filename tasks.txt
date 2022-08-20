@@ -1,0 +1,3 @@
+Napisaæ aplikacjê w Pythonie
+Uczyæ sie nadal Pythona
+Uczyæ sie Javy
