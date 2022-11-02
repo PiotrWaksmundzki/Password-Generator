@@ -29,7 +29,7 @@ pass_str = StringVar()
 def Generator():
     password = ""
 
-    for x in range(0,8):
+    for x in range(pass_len.get()):
         password = password + random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation)
         pass_str.set(password)
     return password
