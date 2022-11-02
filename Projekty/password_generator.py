@@ -29,12 +29,9 @@ pass_str = StringVar()
 def Generator():
     password = ""
 
-    for x in range(0,4):
+    for x in range(0,8):
         password = password + random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation)
         pass_str.set(password)
-    for y in range(pass_len.get() - 4):
-        password = password + random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation)
-    pass_str.set(password)
     return password
 #przycisk
 
