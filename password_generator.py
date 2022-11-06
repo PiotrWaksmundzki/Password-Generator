@@ -21,24 +21,37 @@ def Copy_password():
 
 #utworzenie okna GUI
 root = Tk()
-root.geometry("400x400")
-root.resizable(0,0)
+root.geometry("350x400")
+root.resizable(True,True)
 root.title("Password Generator by Piotr Waksmundzki") # wstążka
 
+#stworzenie dynamicznej siatki w układzie NSEW
+Grid.rowconfigure(root,0,weight=1)
+Grid.rowconfigure(root,1,weight=1)
+Grid.rowconfigure(root,2,weight=1)
+Grid.rowconfigure(root,3,weight=1)
+Grid.rowconfigure(root,4,weight=1)
+Grid.rowconfigure(root,5,weight=1)
+Grid.rowconfigure(root,6,weight=1)
+Grid.columnconfigure(root,0,weight=1)
+Grid.columnconfigure(root,1,weight=1)
+Grid.columnconfigure(root,2,weight=1)
+
+
 #paramentry nagłówka
-head = Label(root, text = "Password Generator", font = 'arial 15 bold').pack()
+head = Label(root, text = "Password Generator", font = 'arial 15 bold').grid(row=0,column=1, sticky=N+S+E+W)
 
 #określenie długości hasła
-pass_label = Label(root, text = "Password Lenght", font = 'arial 10 bold').pack()
+pass_label = Label(root, text = "Password Lenght", font = 'arial 10 bold').grid(row=1,column=1, sticky=N+S+E+W)
 pass_len = IntVar()
-length = Spinbox(root, from_ = 8, to_ = 32, textvariable = pass_len, width = 15).pack()
+length = Spinbox(root, from_ = 8, to_ = 32, textvariable = pass_len, width = 20).grid(row=2,column=1, sticky=N+S+E+W)
 
 #przyciski
 pass_str = StringVar()
-Button(root, text = "Generate Password", command = Generator).pack(pady = 5)
-Entry(root, textvariable = pass_str).pack()
+Button(root, text = "Generate Password", command = Generator).grid(row=3,column=1, sticky=N+S+E+W)
+Entry(root, textvariable = pass_str).grid(row=4,column=1, sticky=N+S+E+W)
 
-Button(root, text = 'Copy to clipboard', command = Copy_password).pack(pady = 5)
+Button(root, text = 'Copy to clipboard', command = Copy_password).grid(row=5,column=1, sticky=N+S+E+W)
 
 #petla uruchamiająca program
 root.mainloop()
